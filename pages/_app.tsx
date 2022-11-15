@@ -5,6 +5,7 @@ import { RainbowKitProvider, getDefaultWallets } from "@rainbow-me/rainbowkit";
 import { chain, configureChains, createClient, WagmiConfig } from "wagmi";
 import { alchemyProvider } from "wagmi/providers/alchemy";
 import { publicProvider } from "wagmi/providers/public";
+import { midnightTheme } from "@rainbow-me/rainbowkit";
 
 const { chains, provider, webSocketProvider } = configureChains(
   [chain.mainnet, chain.polygon, chain.goerli],
@@ -26,7 +27,14 @@ const wagmiClient = createClient({
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <WagmiConfig client={wagmiClient}>
-      <RainbowKitProvider chains={chains}>
+      <RainbowKitProvider
+        theme={midnightTheme({
+          ...midnightTheme.accentColors.blue,
+          borderRadius: "large",
+          fontStack: "system",
+        })}
+        chains={chains}
+      >
         <Component {...pageProps} />
       </RainbowKitProvider>
     </WagmiConfig>
