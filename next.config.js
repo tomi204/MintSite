@@ -1,6 +1,7 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
+module.exports = {
+  images: {
+    domains: [
+      "https://ipfs.io/ipfs/QmaovCmgQtmbdZrazpeDxPikSKXceigAdbQbp4PeCanGwA",
+    ],
+  },
 };
-
-module.exports = nextConfig;
