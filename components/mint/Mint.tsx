@@ -35,7 +35,7 @@ export const Mint = () => {
       {isConnected && (
         <button
           style={{
-            backgroundColor: "blue",
+            backgroundColor: "#0d76fc",
             color: "white",
             paddingInline: "35px",
             paddingBlock: "10px",
