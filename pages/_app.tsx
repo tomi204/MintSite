@@ -17,28 +17,25 @@ import {
   metaMaskWallet,
 } from "@rainbow-me/rainbowkit/wallets";
 
-////////////////////////
 const { chains, provider, webSocketProvider } = configureChains(
   [chain.polygon, chain.goerli],
   [publicProvider()]
 );
 
-const { connectors } = getDefaultWallets({
-  appName: "Mint Tomi204",
-  chains,
-});
-const connector = connectorsForWallets([
+// const { connectors } = getDefaultWallets({
+//   appName: "Mint Tomi204",
+//   chains,
+// });
+const connectors = connectorsForWallets([
   {
     groupName: "Recommended",
 
     wallets: [
       metaMaskWallet({ chains }),
       injectedWallet({ chains }),
-      rainbowWallet({ chains }),
       walletConnectWallet({ chains }),
       ledgerWallet({ chains }),
       braveWallet({ chains }),
-      coinbaseWallet({}),
     ],
   },
 ]);
@@ -55,7 +52,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <RainbowKitProvider
         theme={midnightTheme({
           ...midnightTheme.accentColors.blue,
-          borderRadius: "large",
+          borderRadius: "medium",
           fontStack: "system",
         })}
         chains={chains}

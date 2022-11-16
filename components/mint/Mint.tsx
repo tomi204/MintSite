@@ -1,5 +1,6 @@
 import { ethers } from "ethers";
 import React from "react";
+
 import { useAccount, useContractWrite, usePrepareContractWrite } from "wagmi";
 export const Mint = () => {
   const { isConnected } = useAccount();
@@ -33,7 +34,15 @@ export const Mint = () => {
     <div>
       {isConnected && (
         <button
-          style={{ borderRadius: "20px" }}
+          style={{
+            backgroundColor: "blue",
+            color: "white",
+            paddingInline: "35px",
+            paddingBlock: "10px",
+            cursor: "pointer",
+            borderRadius: "20px",
+            border: "none",
+          }}
           disabled={!write}
           onClick={() => write?.()}
         >
