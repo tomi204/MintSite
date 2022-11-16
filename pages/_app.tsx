@@ -6,9 +6,20 @@ import { chain, configureChains, createClient, WagmiConfig } from "wagmi";
 import { alchemyProvider } from "wagmi/providers/alchemy";
 import { publicProvider } from "wagmi/providers/public";
 import { midnightTheme } from "@rainbow-me/rainbowkit";
+import { connectorsForWallets } from "@rainbow-me/rainbowkit";
+import {
+  injectedWallet,
+  rainbowWallet,
+  walletConnectWallet,
+  coinbaseWallet,
+  braveWallet,
+  ledgerWallet,
+  metaMaskWallet,
+} from "@rainbow-me/rainbowkit/wallets";
 
+////////////////////////
 const { chains, provider, webSocketProvider } = configureChains(
-  [chain.mainnet, chain.polygon, chain.goerli],
+  [chain.polygon, chain.goerli],
   [publicProvider()]
 );
 
@@ -16,7 +27,21 @@ const { connectors } = getDefaultWallets({
   appName: "Mint Tomi204",
   chains,
 });
+const connector = connectorsForWallets([
+  {
+    groupName: "Recommended",
 
+    wallets: [
+      metaMaskWallet({ chains }),
+      injectedWallet({ chains }),
+      rainbowWallet({ chains }),
+      walletConnectWallet({ chains }),
+      ledgerWallet({ chains }),
+      braveWallet({ chains }),
+      coinbaseWallet({}),
+    ],
+  },
+]);
 const wagmiClient = createClient({
   autoConnect: true,
   connectors,

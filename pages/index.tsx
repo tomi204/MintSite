@@ -1,8 +1,8 @@
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import type { NextPage } from "next";
 import Head from "next/head";
+import { Mint } from "../components/mint/Mint";
 import styles from "../styles/Home.module.css";
-import { RainbowKitProvider, midnightTheme } from "@rainbow-me/rainbowkit";
 
 const Home: NextPage = () => {
   return (
@@ -18,7 +18,7 @@ const Home: NextPage = () => {
 
       <main className={styles.main}>
         <ConnectButton />
-
+        <Mint />
         <h1 className={styles.title}>
           Mint your <a href="">NFT</a>
         </h1>
