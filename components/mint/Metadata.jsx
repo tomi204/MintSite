@@ -37,10 +37,29 @@ export const MetaData = () => {
       stateMutability: "view",
       type: "function",
     },
+    {
+      inputs: [
+        {
+          internalType: "uint256",
+          name: "tokenId",
+          type: "uint256",
+        },
+      ],
+      name: "ownerOf",
+      outputs: [
+        {
+          internalType: "address",
+          name: "",
+          type: "address",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
   ];
 
   const contract = new ethers.Contract(
-    "0xb7004ED1F06282995Ae210B5C00D8D75733FC095",
+    "0xC1C84F632a93cc4487bB2fbB6921DB47062f17c1",
     abi,
     wallet
   );
@@ -75,25 +94,5 @@ export const MetaData = () => {
     });
   });
 
-  return (
-    <div>
-      {isConnected && (
-        <button
-          style={{
-            backgroundColor: "#0d76fc",
-            color: "white",
-            paddingInline: "35px",
-            paddingBlock: "10px",
-            cursor: "pointer",
-            borderRadius: "20px",
-            border: "none",
-          }}
-          disabled={!write}
-          onClick={() => write?.()}
-        >
-          MINT
-        </button>
-      )}
-    </div>
-  );
+  return <div>{isConnected && <button>MINT</button>}</div>;
 };
