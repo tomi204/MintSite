@@ -2,22 +2,17 @@
   padding: 0rem;
   background-color: rgb(24, 23, 23);
 }
-.Link {
+.divM a {
   color: rgb(255, 255, 255);
   text-decoration: none;
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: 600;
-  margin: 0.5rem;
+  text-decoration: underline;
 }
-.Link:hover {
+.divM a:hover {
   scale: 1.1;
-  color: rgb(255, 255, 255);
-  text-decoration: underline;
 }
-.link:active {
-  color: rgb(255, 255, 255);
-  text-decoration: underline;
-}
+
 .main {
   color: white;
   min-height: 100vh;
@@ -37,14 +32,9 @@
   margin: 27px;
 }
 .divM:hover {
-  scale: 1.1;
+  scale: 1.05;
 }
-.divM a {
-  font-size: 13px;
-  font-weight: 500;
 
-  text-decoration: none;
-}
 .navbar {
   color: #ffffff;
   font-size: 1rem;
