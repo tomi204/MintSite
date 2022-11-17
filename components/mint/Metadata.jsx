@@ -62,7 +62,7 @@ export const MetaData = () => {
     ];
 
     const contract = new ethers.Contract(
-      "0xC1C84F632a93cc4487bB2fbB6921DB47062f17c1",
+      "0xC1C84F632a93cc4487bB2fbB6921DB47062f17c1", //contract address
       abi,
       wallet
     );
@@ -106,42 +106,36 @@ export const MetaData = () => {
         {nfts.map((nft, i) => {
           <div>
             <Image src={nft.img} key={i} />
-            <h2 style={{ color: "white" }}>Error for load</h2>
+            <h2 style={{ color: "white" }}>Error</h2>
           </div>;
         })}
       </div>
     );
   return (
     <div>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          flexDirection: "column",
-          color: "#7b3fe4",
-          backgroundColor: "white",
-          padding: "20px",
-          borderRadius: "30px",
-          background: "#7c14bb",
-        }}
-        gap={3}
-      >
-        {nfts.map((nft, i) => {
-          return (
-            <div isHoverable key={i} variant="bordered">
-              <h1>{nft.name}</h1>
-              <Image
-                style={{ borderRadius: 20 }}
-                width={200}
-                height={250}
-                src={nft.img}
-              />
-              <h1>NFT ID: {nft.tokenId}</h1>
-            </div>
-          );
-        })}
-      </div>
+      {nfts.map((nft, i) => {
+        return (
+          <div
+            isHoverable
+            key={i}
+            variant="bordered"
+            style={
+              ({ display: "flex" },
+              { alignItems: "center" },
+              { justifyContent: "center" })
+            }
+          >
+            <h2>{nft.name}</h2>
+            <Image
+              style={{ borderRadius: 20 }}
+              width={230}
+              height={280}
+              src={nft.img}
+            />
+            <h3>NFT ID: {nft.tokenId}</h3>
+          </div>
+        );
+      })}
     </div>
   );
 };

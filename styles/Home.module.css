@@ -1,8 +1,23 @@
 .container {
-  padding: 0 2rem;
+  padding: 0rem;
   background-color: rgb(24, 23, 23);
 }
-
+.Link {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0.5rem;
+}
+.Link:hover {
+  scale: 1.1;
+  color: rgb(255, 255, 255);
+  text-decoration: underline;
+}
+.link:active {
+  color: rgb(255, 255, 255);
+  text-decoration: underline;
+}
 .main {
   color: white;
   min-height: 100vh;
@@ -12,6 +27,23 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.divM {
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  border-radius: 25px;
+  background: rgba(13, 118, 252, 1);
+  margin: 27px;
+}
+.divM:hover {
+  scale: 1.1;
+}
+.divM a {
+  font-size: 13px;
+  font-weight: 500;
+
+  text-decoration: none;
 }
 .navbar {
   color: #ffffff;
