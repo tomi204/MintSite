@@ -4,6 +4,7 @@
 }
 
 .main {
+  color: white;
   min-height: 100vh;
   padding: 4rem 0;
   flex: 1;
@@ -27,12 +28,14 @@
   display: flex;
   flex: 1;
   padding: 2rem 0;
+  color: #ffffff;
   border-top: 1px solid #eaeaea;
   justify-content: center;
   align-items: center;
 }
 
 .footer a {
+  color: #ffffff;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -40,7 +43,7 @@
 }
 
 .title a {
-  color: #0d76fc;
+  color: #ffffff;
   text-decoration: none;
 }
 
@@ -51,7 +54,7 @@
 }
 
 .title {
-  color: #0d76fc;
+  color: #ffffff;
   margin: 3rem 0;
   line-height: 1;
   font-size: 2.5rem;

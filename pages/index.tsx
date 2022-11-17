@@ -24,14 +24,14 @@ const Home: NextPage = () => {
         <ConnectButton />
       </div>
       <main className={styles.main}>
-        <Mint />
-        <MetaData />
         <h1 className={styles.title}>
           Mint your{" "}
           <a href="https://testnets.opensea.io/es/assets/goerli/0xb7004ed1f06282995ae210b5c00d8d75733fc095/0">
             NFT
           </a>
         </h1>
+        <MetaData />
+        <Mint />
       </main>
 
       <footer className={styles.footer}>

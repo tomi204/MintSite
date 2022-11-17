@@ -6,7 +6,7 @@ export const Mint = () => {
   const { isConnected } = useAccount();
   const number = ethers.BigNumber.from(1);
   const { config } = usePrepareContractWrite({
-    address: "0xb7004ED1F06282995Ae210B5C00D8D75733FC095",
+    address: "0xC1C84F632a93cc4487bB2fbB6921DB47062f17c1",
     functionName: "mintNFT",
     overrides: {
       value: ethers.utils.parseEther("0.05"),

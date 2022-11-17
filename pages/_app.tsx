@@ -8,19 +8,10 @@ import {
   Theme,
 } from "@rainbow-me/rainbowkit";
 import { chain, configureChains, createClient, WagmiConfig } from "wagmi";
-import { alchemyProvider } from "wagmi/providers/alchemy";
 import { publicProvider } from "wagmi/providers/public";
-import { connectorsForWallets } from "@rainbow-me/rainbowkit";
-import {
-  injectedWallet,
-  walletConnectWallet,
-  braveWallet,
-  ledgerWallet,
-  metaMaskWallet,
-} from "@rainbow-me/rainbowkit/wallets";
 
 const { chains, provider, webSocketProvider } = configureChains(
-  [chain.polygon, chain.goerli],
+  [chain.polygon],
   [publicProvider()]
 );
 

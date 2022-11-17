@@ -13,16 +13,14 @@ export const MetaData = () => {
     generateNft();
   }, [setNfts]);
   const key =
-    "0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80";
-  const poly = "https://matic-mainnet.chainstacklabs.com";
+    "0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80"; // default key
+  const poly = "https://matic-mainnet.chainstacklabs.com"; // polygon rpc
   async function generateNft() {
-    const provider = new ethers.providers.JsonRpcProvider(poly);
-    const wallet = new ethers.Wallet(key, provider);
-    async function refreshPage() {
-      window.location.reload();
-    }
+    const provider = new ethers.providers.JsonRpcProvider(poly); //provider for polygon
+    const wallet = new ethers.Wallet(key, provider); // wallet for polygon
 
     const abi = [
+      // abi for contract
       {
         inputs: [
           {
@@ -68,10 +66,10 @@ export const MetaData = () => {
       abi,
       wallet
     );
-    const itemArray = [];
-    const token = 0;
-    const owner = contract.ownerOf(token);
-    const rawUri = contract.tokenURI(token);
+    const itemArray = []; // clear array
+    const token = 0; // token id for show in front end
+    const owner = contract.ownerOf(token); // get owner of token
+    const rawUri = contract.tokenURI(token); // get token uri(image)
     const Uri = Promise.resolve(rawUri);
     const getUri = Uri.then((value) => {
       let str = value;
@@ -108,22 +106,38 @@ export const MetaData = () => {
         {nfts.map((nft, i) => {
           <div>
             <Image src={nft.img} key={i} />
-            <h2>No Collections Retrieved</h2>
+            <h2 style={{ color: "white" }}>Error for load</h2>
           </div>;
         })}
       </div>
     );
   return (
     <div>
-      <h1>NFT Collection</h1>
-      <div gap={3}>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          flexDirection: "column",
+          color: "#7b3fe4",
+          backgroundColor: "white",
+          padding: "20px",
+          borderRadius: "30px",
+          background: "#7c14bb",
+        }}
+        gap={3}
+      >
         {nfts.map((nft, i) => {
           return (
             <div isHoverable key={i} variant="bordered">
-              <Image width={200} height={200} src={nft.img} />
               <h1>{nft.name}</h1>
+              <Image
+                style={{ borderRadius: 20 }}
+                width={200}
+                height={250}
+                src={nft.img}
+              />
               <h1>NFT ID: {nft.tokenId}</h1>
-              <h1>{nft.desc}</h1>
             </div>
           );
         })}
