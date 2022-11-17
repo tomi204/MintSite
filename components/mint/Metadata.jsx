@@ -3,7 +3,6 @@ import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useAccount, useContractWrite, usePrepareContractWrite } from "wagmi";
-import { data } from "axios";
 import Image from "next/image";
 export const MetaData = () => {
   const { isConnected, address } = useAccount();
