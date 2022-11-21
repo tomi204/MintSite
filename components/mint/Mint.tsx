@@ -1,16 +1,18 @@
 import { BigNumber, ethers } from "ethers";
 import React from "react";
+import styles from "./Mint.module.css";
 import { useState } from "react";
 import { useAccount, useContractWrite, usePrepareContractWrite } from "wagmi";
 export const Mint = () => {
   const [number, setNumber] = useState("0");
   const onChangeValue = (e) => {
     if (e.target.value === "") {
-      setNumber("0");
+      setNumber("1");
     } else {
       setNumber(e.target.value);
     }
   };
+  console.log(number);
 
   const { isConnected, address } = useAccount();
   const { config } = usePrepareContractWrite({
@@ -36,6 +38,9 @@ export const Mint = () => {
       },
     ],
     args: [ethers.BigNumber.from(number)],
+    onError: (error) => {
+      console.log(error);
+    },
   });
   const { write } = useContractWrite(config);
 
@@ -44,16 +49,9 @@ export const Mint = () => {
       {isConnected && (
         <div>
           <button
-            className="buton-mint"
+            className={styles.btnMint}
             style={{
               backgroundColor: "#0d76fc",
-              color: "white",
-              paddingInline: "35px",
-              paddingBlock: "10px",
-              cursor: "pointer",
-              borderRadius: "20px",
-              border: "none",
-              fontSize: "15px",
             }}
             disabled={!write}
             onClick={() => write?.()}
@@ -61,20 +59,10 @@ export const Mint = () => {
             MINT
           </button>
           <input
-            type="string"
+            className={styles.input}
+            type="number"
             placeholder="Enter the number of NFTs to mint"
             min={0}
-            style={{
-              marginLeft: "10px",
-              backgroundColor: "#0d76fc",
-              color: "white",
-              paddingInline: "9px",
-              paddingBlock: "10px",
-              cursor: "pointer",
-              borderRadius: "20px",
-              border: "none",
-              fontSize: "15px",
-            }}
             value={number}
             onChange={onChangeValue}
           />

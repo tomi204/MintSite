@@ -1,0 +1,40 @@
+.btnMint {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgb(9, 4, 89) 0%,
+    rgba(39, 9, 121, 1) 37%,
+    rgb(1, 93, 223) 100%
+  );
+  color: white;
+  padding-inline: 35px;
+  padding-block: 10px;
+  border-radius: 20px;
+  border: none;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.btnMint:hover {
+  scale: 1.1;
+}
+.input {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgb(17, 12, 104) 0%,
+    rgb(72, 25, 200) 37%,
+    #3300ff 100%
+  );
+  font-weight: 900;
+  border-radius: 20px;
+  color: white;
+  border: none;
+  padding-inline: 35px;
+  padding-block: 10px;
+  font-size: 15px;
+  cursor: pointer;
+}
+.input:hover {
+  scale: 1.1;
+}

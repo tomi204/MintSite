@@ -1,6 +1,11 @@
 .container {
   padding: 0rem;
-  background-color: rgb(24, 23, 23);
+  background: rgb(3, 12, 59);
+  background: radial-gradient(
+    circle,
+    rgba(3, 12, 59, 1) 0%,
+    rgba(51, 0, 255, 1) 100%
+  );
 }
 .divM a {
   color: rgb(255, 255, 255);
@@ -28,7 +33,9 @@
   flex-direction: column;
   padding: 25px;
   border-radius: 25px;
-  background: rgb(26, 4, 98);
+  background: #3b17c8;
+
+  font-weight: 900;
   margin: 27px;
 }
 .divM:hover {
