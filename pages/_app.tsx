@@ -7,11 +7,19 @@ import {
   darkTheme,
 } from "@rainbow-me/rainbowkit";
 import { chain, configureChains, createClient, WagmiConfig } from "wagmi";
-import { publicProvider } from "wagmi/providers/public";
 
+import { publicProvider } from "wagmi/providers/public";
+import { alchemyProvider } from "wagmi/providers/alchemy";
 const { chains, provider, webSocketProvider } = configureChains(
   [chain.polygon],
-  [publicProvider()]
+  [
+    alchemyProvider({
+      apiKey: process.env.alchemyKey,
+      stallTimeout: 1_000,
+    }),
+
+    publicProvider(),
+  ]
 );
 
 const { connectors } = getDefaultWallets({

@@ -125,13 +125,13 @@ export const MetaData = () => {
             }
           >
             <h2>{nft.name}</h2>
+            <h3>NFT ID: {nft.tokenId}</h3>
             <Image
               style={{ borderRadius: 20 }}
               width={230}
-              height={280}
+              height={300}
               src={nft.img}
             />
-            <h3>NFT ID: {nft.tokenId}</h3>
           </div>
         );
       })}
