@@ -12,7 +12,6 @@ export const Mint = () => {
       setNumber(e.target.value);
     }
   };
-  console.log(number);
 
   const { isConnected, address } = useAccount();
   const { config } = usePrepareContractWrite({
@@ -38,9 +37,6 @@ export const Mint = () => {
       },
     ],
     args: [ethers.BigNumber.from(number)],
-    onError: (error) => {
-      console.log(error);
-    },
   });
   const { write } = useContractWrite(config);
 
