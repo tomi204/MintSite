@@ -4,7 +4,7 @@ import Head from "next/head";
 import { Mint } from "../components/mint/Mint";
 import styles from "../styles/Home.module.css";
 import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
-import { MetaData } from "../components/mint/Metadata";
+import { MetaData } from "../components/metadata/MetaData";
 import { useAccount } from "wagmi";
 const Home: NextPage = () => {
   const { isConnected, isDisconnected } = useAccount();

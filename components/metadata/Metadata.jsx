@@ -115,6 +115,7 @@ export const MetaData = () => {
       {nfts.map((nft, i) => {
         return (
           <div
+            className="nft-div"
             isHoverable
             key={i}
             variant="bordered"
