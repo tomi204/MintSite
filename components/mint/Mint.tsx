@@ -5,11 +5,11 @@ import { useState } from "react";
 import { useAccount, useContractWrite, usePrepareContractWrite } from "wagmi";
 export const Mint = () => {
   const [number, setNumber] = useState("0");
-  const onChangeValue = (e) => {
-    if (e.target.value === "") {
+  const onChangeValue = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (event.target.value === "") {
       setNumber("1");
     } else {
-      setNumber(e.target.value);
+      setNumber(event.target.value);
     }
   };
 

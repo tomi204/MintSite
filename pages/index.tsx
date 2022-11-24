@@ -6,7 +6,9 @@ import styles from "../styles/Home.module.css";
 import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
 import { MetaData } from "../components/metadata/MetaData";
 import { useAccount } from "wagmi";
+import { useMounted } from "./../components/context/Mounted";
 const Home: NextPage = () => {
+  const mounted = useMounted();
   const { isConnected, isDisconnected } = useAccount();
   return (
     <div className={styles.container}>
@@ -21,20 +23,22 @@ const Home: NextPage = () => {
           <h1 className={styles.title}>Connect your wallet for mint</h1>
         </main>
       )}
-      {isConnected && (
-        <main className={styles.main}>
-          <h1 className={styles.title}>Mint your NFT</h1>
+      {mounted
+        ? isConnected && (
+            <main className={styles.main}>
+              <h1 className={styles.title}>Mint your NFT</h1>
 
-          <Mint />
-          <div className={styles.divM}>
-            <MetaData />
-            <br />
-            <a href="https://polygonscan.com/address/0xc1c84f632a93cc4487bb2fbb6921db47062f17c1">
-              View in Polygonscan
-            </a>
-          </div>
-        </main>
-      )}
+              <Mint />
+              <div className={styles.divM}>
+                <MetaData />
+                <br />
+                <a href="https://polygonscan.com/address/0xc1c84f632a93cc4487bb2fbb6921db47062f17c1">
+                  View in Polygonscan
+                </a>
+              </div>
+            </main>
+          )
+        : null}
 
       <footer className={styles.footer}>
         <a
