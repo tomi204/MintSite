@@ -22,15 +22,17 @@
   background: rgb(2, 0, 36);
   background: linear-gradient(
     90deg,
-    rgb(17, 12, 104) 0%,
+    rgb(20, 12, 170) 0%,
     rgb(72, 25, 200) 37%,
     #3300ff 100%
   );
   font-weight: 900;
   border-radius: 20px;
+  width: 45%;
   color: white;
   border: none;
-  padding-inline: 35px;
+  margin-left: 25px;
+  padding-inline: 10px;
   padding-block: 10px;
   font-size: 15px;
   cursor: pointer;
