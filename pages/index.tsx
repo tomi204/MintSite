@@ -28,6 +28,7 @@ const Home: NextPage = () => {
           <Mint />
           <div className={styles.divM}>
             <MetaData />
+            <br />
             <a href="https://polygonscan.com/address/0xc1c84f632a93cc4487bb2fbb6921db47062f17c1">
               View in Polygonscan
             </a>
