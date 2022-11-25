@@ -26,13 +26,17 @@ const Home: NextPage = () => {
       {mounted
         ? isConnected && (
             <main className={styles.main}>
-              <h1 className={styles.title}>Mint your NFT</h1>
+              <h2 className={styles.title}>Mint your NFT</h2>
 
               <Mint />
               <div className={styles.divM}>
                 <MetaData />
                 <br />
-                <a href="https://polygonscan.com/address/0xc1c84f632a93cc4487bb2fbb6921db47062f17c1">
+                <a
+                  href="https://polygonscan.com/address/0xc1c84f632a93cc4487bb2fbb6921db47062f17c1"
+                  target={"_blank"}
+                  rel="noreferrer"
+                >
                   View in Polygonscan
                 </a>
               </div>

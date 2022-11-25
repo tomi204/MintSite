@@ -1,4 +1,8 @@
 .btnMint {
+  padding: 0.6em 2em;
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
   background: rgb(2, 0, 36);
   background: linear-gradient(
     90deg,
@@ -6,37 +10,102 @@
     rgba(39, 9, 121, 1) 37%,
     rgb(1, 93, 223) 100%
   );
-  color: white;
-  padding-inline: 35px;
-  padding-block: 10px;
-  border-radius: 20px;
-  border: none;
-  font-size: 15px;
-  font-weight: 600;
   cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
 }
-.btnMint:hover {
-  scale: 1.1;
-}
-.input {
-  background: rgb(2, 0, 36);
+
+.btnMint:before {
+  content: "";
   background: linear-gradient(
-    90deg,
-    rgb(20, 12, 170) 0%,
-    rgb(72, 25, 200) 37%,
-    #3300ff 100%
+    45deg,
+    #003cff,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
   );
-  font-weight: 900;
-  border-radius: 20px;
-  width: 45%;
-  color: white;
-  border: none;
-  margin-left: 25px;
-  padding-inline: 10px;
-  padding-block: 10px;
-  font-size: 15px;
-  cursor: pointer;
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing-button-85 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
 }
-.input:hover {
-  scale: 1.1;
+
+.btnMint:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #222;
+  left: 0;
+  top: 0;
+  border-radius: 20px;
+}
+
+@keyframes glowing-button-85 {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+.inputMint {
+  padding: 0.6em 2em;
+  border: black;
+  outline: none;
+  width: 130px;
+  height: 40px;
+  margin-left: 20px;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  border-radius: 20px;
+  user-select: none;
+  -webkit-user-select: none;
+  background: linear-gradient(
+    45deg,
+    #000000,
+    rgb(0, 0, 0),
+    #10d310,
+    #0f8d39,
+    #259784,
+    #770fbd,
+    #064fbd,
+    #000000,
+    #000000
+  );
+  background-size: 400%;
+  animation: animacionInput 10s linear infinite;
+}
+
+@keyframes animacionInput {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
 }

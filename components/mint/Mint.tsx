@@ -55,7 +55,7 @@ export const Mint = () => {
             MINT
           </button>
           <input
-            className={styles.input}
+            className={styles.inputMint}
             type="number"
             placeholder="Enter the number of NFTs to mint"
             min={0}
