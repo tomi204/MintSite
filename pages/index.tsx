@@ -4,7 +4,7 @@ import Head from "next/head";
 import { Mint } from "../components/mint/Mint";
 import styles from "../styles/Home.module.css";
 import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
-import { MetaData } from "../components/metadata/MetaData";
+import { MetaData } from "../components/metadata/Metadata";
 import { useAccount } from "wagmi";
 import { useMounted } from "./../components/context/Mounted";
 const Home: NextPage = () => {
