@@ -1,12 +1,13 @@
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import type { NextPage } from "next";
 import Head from "next/head";
-import { Mint } from "../components/mint/Mint";
+import { Mint } from "../components/Mint";
 import styles from "../styles/Home.module.css";
 import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
-import { MetaData } from "../components/metadata/Metadata";
 import { useAccount } from "wagmi";
-import { useMounted } from "./../components/context/Mounted";
+import { useMounted } from "../components/Mounted";
+import { MetaData } from "./../components/Metadata";
+
 const Home: NextPage = () => {
   const mounted = useMounted();
   const { isConnected, isDisconnected } = useAccount();
